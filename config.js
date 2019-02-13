@@ -1,12 +1,12 @@
 'use strict';
 
 module.exports = {
-  url: 'https://lumen.netlify.com',
-  title: 'Blog by John Doe',
-  subtitle: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
-  copyright: '© All rights reserved.',
+  url: 'https://cdrani.site',
+  title: 'Charles Drani',
+  subtitle: 'Charles Drani personal site with articles, contact, and project pages',
+  copyright: '©charlesdrani All rights reserved.',
   disqusShortname: '',
-  postsPerPage: 4,
+  postsPerPage: 5,
   googleAnalyticsId: 'UA-73379983-2',
   menu: [
     {
@@ -14,25 +14,26 @@ module.exports = {
       path: '/'
     },
     {
-      label: 'About me',
+      label: 'About',
       path: '/pages/about'
     },
     {
-      label: 'Contact me',
+      label: 'Contact',
       path: '/pages/contacts'
+    },
+    {
+      label: 'Projects', 
+      path: '/pages/projects'
     }
   ],
   author: {
-    name: 'John Doe',
-    photo: '/photo.jpg',
-    bio: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
+    name: 'Charles Drani',
+    photo: '/photo.png',
+    bio: 'I am a Full Stack Developer working with Ruby(Ruby on Rails), JS(React)',
     contacts: {
-      email: '#',
-      telegram: '#',
-      twitter: '#',
-      github: '#',
-      rss: '#',
-      vkontakte: '#'
+      email: 'charlesdrani@gmail.com',
+      twitter: 'cdrainxv',
+      github: 'cdrainxv',
     }
   }
 };
