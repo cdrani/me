@@ -7,9 +7,7 @@ import Page from '../components/Page'
 
 const CategoriesListTemplate = ({ data }) => {
   const { title, subtitle } = data.site.siteMetadata
-
   const { group } = data.allMarkdownRemark
-  console.log('group', group)
 
   return (
     <Layout title={`Categories - ${title}`} description={subtitle}>
