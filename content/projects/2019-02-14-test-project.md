@@ -2,7 +2,7 @@
 template: project
 title: Test Project
 slug: test-project
-draft: true
+draft: false
 date: 2019-02-15T06:42:01.966Z
 description: >-
   somethingsomethingsomethingsomethingsomethingsomethingsomethingsomethingsomethingsomethingsomethingsomethingsomethingsomethingsomethingsomethingsomethingsomethingsomethingsomethingsomething
