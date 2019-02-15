@@ -10,7 +10,7 @@ import styles from '../Post/Post.module.scss'
 const Project = ({ project }) => {
   const { tags, title, date } = project.frontmatter
   const { html } = project
-  const { tagSlugs } = project.fields
+  const { tagSlugs, slug } = project.fields
 
   return (
     <div className={styles['post']}>
@@ -29,10 +29,7 @@ const Project = ({ project }) => {
       </div>
 
       <div className={styles['post__comments']}>
-        <Comments
-          postSlug={project.fields.slug}
-          postTitle={project.frontmatter.title}
-        />
+        <Comments postSlug={slug} postTitle={title} />
       </div>
     </div>
   )

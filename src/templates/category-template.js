@@ -52,10 +52,7 @@ export const query = graphql`
       limit: $postsLimit
       skip: $postsOffset
       filter: {
-        frontmatter: {
-          category: { eq: $category }
-          draft: { ne: true }
-        }
+        frontmatter: { category: { eq: $category }, draft: { ne: true } }
       }
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {

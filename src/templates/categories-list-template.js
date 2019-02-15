@@ -1,24 +1,22 @@
-import React from 'react';
-import { Link, graphql } from 'gatsby';
-import kebabCase from 'lodash/kebabCase';
-import Sidebar from '../components/Sidebar';
-import Layout from '../components/Layout';
-import Page from '../components/Page';
+import React from 'react'
+import { Link, graphql } from 'gatsby'
+import kebabCase from 'lodash/kebabCase'
+import Sidebar from '../components/Sidebar'
+import Layout from '../components/Layout'
+import Page from '../components/Page'
 
 const CategoriesListTemplate = ({ data }) => {
-  const {
-    title,
-    subtitle
-  } = data.site.siteMetadata;
+  const { title, subtitle } = data.site.siteMetadata
 
-  const { group } = data.allMarkdownRemark;
+  const { group } = data.allMarkdownRemark
+  console.log('group', group)
 
   return (
     <Layout title={`Categories - ${title}`} description={subtitle}>
       <Sidebar />
       <Page title="Categories">
         <ul>
-          {group.map((category) => (
+          {group.map(category => (
             <li key={category.fieldValue}>
               <Link to={`/category/${kebabCase(category.fieldValue)}/`}>
                 {category.fieldValue} ({category.totalCount})
@@ -28,8 +26,8 @@ const CategoriesListTemplate = ({ data }) => {
         </ul>
       </Page>
     </Layout>
-  );
-};
+  )
+}
 
 export const query = graphql`
   query CategoriesListQuery {
@@ -40,7 +38,7 @@ export const query = graphql`
       }
     }
     allMarkdownRemark(
-      filter: { frontmatter: { template: { eq: "post" }, draft: { ne: true } } }
+      filter: { frontmatter: { draft: { ne: true } } }
     ) {
       group(field: frontmatter___category) {
         fieldValue
@@ -48,6 +46,6 @@ export const query = graphql`
       }
     }
   }
-`;
+`
 
-export default CategoriesListTemplate;
+export default CategoriesListTemplate
