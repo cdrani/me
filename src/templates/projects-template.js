@@ -6,7 +6,7 @@ import Feed from '../components/Feed'
 import Page from '../components/Page'
 import Pagination from '../components/Pagination'
 
-const IndexTemplate = ({ data, pageContext }) => {
+const ProjectsTemplate = ({ data, pageContext }) => {
   const { title: siteTitle, subtitle: siteSubtitle } = data.site.siteMetadata
 
   const {
@@ -18,8 +18,11 @@ const IndexTemplate = ({ data, pageContext }) => {
   } = pageContext
 
   const { edges } = data.allMarkdownRemark
+
   const pageTitle =
-    currentPage > 0 ? `Posts - Page ${currentPage} - ${siteTitle}` : siteTitle
+    currentPage > 0
+      ? `Projects - Page ${currentPage} - ${siteTitle}`
+      : siteTitle
 
   return (
     <Layout title={pageTitle} description={siteSubtitle}>
@@ -38,7 +41,7 @@ const IndexTemplate = ({ data, pageContext }) => {
 }
 
 export const query = graphql`
-  query IndexTemplate($postsLimit: Int!, $postsOffset: Int!) {
+  query ProjectsTemplate {
     site {
       siteMetadata {
         title
@@ -46,11 +49,9 @@ export const query = graphql`
       }
     }
     allMarkdownRemark(
-      limit: $postsLimit
-      skip: $postsOffset
       filter: {
-        fields: { collection: { eq: "posts" } }
-        frontmatter: { template: { eq: "post" } }
+        fields: { collection: { eq: "projects" } }
+        frontmatter: { template: { eq: "project" } }
       }
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {
@@ -72,4 +73,4 @@ export const query = graphql`
   }
 `
 
-export default IndexTemplate
+export default ProjectsTemplate

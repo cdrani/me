@@ -1,12 +1,14 @@
-'use strict';
+'use strict'
 
 module.exports = {
   url: 'https://cdrani.site',
   title: 'Charles Drani',
-  subtitle: 'Charles Drani personal site with articles, contact, and project pages',
+  subtitle:
+    'Charles Drani personal site with articles, contact, and project pages',
   copyright: '©charlesdrani All rights reserved.',
   disqusShortname: '',
   postsPerPage: 5,
+  projectsPerPage: 5,
   googleAnalyticsId: 'UA-73379983-2',
   menu: [
     {
@@ -14,26 +16,27 @@ module.exports = {
       path: '/'
     },
     {
+      label: 'Projects',
+      path: '/projects'
+    },
+    {
       label: 'About',
-      path: '/pages/about'
+      path: '/about'
     },
     {
       label: 'Contact',
-      path: '/pages/contacts'
-    },
-    {
-      label: 'Projects', 
-      path: '/pages/projects'
+      path: '/contact'
     }
   ],
   author: {
     name: 'Charles Drani',
     photo: '/photo.png',
-    bio: 'I am a Full Stack Developer working with Ruby(Ruby on Rails), JS(React)',
+    bio:
+      'I am a Full Stack Developer working with Ruby(Ruby on Rails), JS(React)',
     contacts: {
       email: 'charlesdrani@gmail.com',
       twitter: 'cdrainxv',
-      github: 'cdrainxv',
+      github: 'cdrainxv'
     }
   }
-};
+}

@@ -1,28 +1,31 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import Post from '../components/Post'
+import Project from '../components/Project'
 
-const PostTemplate = ({ data }) => {
+const ProjectTemplate = ({ data }) => {
   const { title: siteTitle, subtitle: siteSubtitle } = data.site.siteMetadata
 
   const {
-    title: postTitle,
-    description: postDescription
+    title: projectTitle,
+    description: projectDescription
   } = data.markdownRemark.frontmatter
 
   const metaDescription =
-    postDescription !== null ? postDescription : siteSubtitle
+    projectDescription !== null ? projectDescription : siteSubtitle
 
   return (
-    <Layout title={`${postTitle} - ${siteTitle}`} description={metaDescription}>
-      <Post post={data.markdownRemark} />
+    <Layout
+      title={`${projectTitle} - ${siteTitle}`}
+      description={metaDescription}
+    >
+      <Project project={data.markdownRemark} />
     </Layout>
   )
 }
 
 export const query = graphql`
-  query PostBySlug($slug: String!) {
+  query ProjectBySlug($slug: String!) {
     site {
       siteMetadata {
         author {
@@ -38,7 +41,7 @@ export const query = graphql`
       }
     }
     markdownRemark(
-      fields: { collection: { eq: "posts" }, slug: { eq: $slug } }
+      fields: { collection: { eq: "projects" }, slug: { eq: $slug } }
     ) {
       id
       html
@@ -56,4 +59,4 @@ export const query = graphql`
   }
 `
 
-export default PostTemplate
+export default ProjectTemplate

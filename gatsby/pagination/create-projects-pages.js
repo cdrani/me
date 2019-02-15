@@ -10,7 +10,7 @@ module.exports = async (graphql, actions) => {
     {
       allMarkdownRemark(
         filter: {
-          frontmatter: { template: { eq: "post" }, draft: { ne: true } }
+          frontmatter: { template: { eq: "project" }, draft: { ne: true } }
         }
       ) {
         totalCount
@@ -18,19 +18,19 @@ module.exports = async (graphql, actions) => {
     }
   `)
 
-  const { postsPerPage } = siteConfig
+  const { projectsPerPage } = siteConfig
   const numPages = Math.ceil(
-    result.data.allMarkdownRemark.totalCount / postsPerPage
+    result.data.allMarkdownRemark.totalCount / projectsPerPage
   )
 
   for (let i = 0; i < numPages; i += 1) {
     createPage({
-      path: i === 0 ? '/' : `/page/${i}`,
-      component: path.resolve('./src/templates/index-template.js'),
+      path: i === 0 ? '/projects' : `/page/${i}`,
+      component: path.resolve('./src/templates/projects-template.js'),
       context: {
         currentPage: i,
-        postsLimit: postsPerPage,
-        postsOffset: i * postsPerPage,
+        postsLimit: projectsPerPage,
+        postsOffset: i * projectsPerPage,
         prevPagePath: i <= 1 ? '/' : `/page/${i - 1}`,
         nextPagePath: `/page/${i + 1}`,
         hasPrevPage: i !== 0,
