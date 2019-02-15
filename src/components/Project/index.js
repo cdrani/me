@@ -4,13 +4,11 @@ import Author from '../Post/Author'
 import Comments from '../Post/Comments'
 import Content from '../Post/Content'
 import Meta from '../Post/Meta'
-import Tags from '../Post/Meta'
+import Tags from '../Post/Tags'
 import styles from '../Post/Post.module.scss'
 
 const Project = ({ project }) => {
   const { tags, title, date } = project.frontmatter
-  console.log('projects: ', project.frontmatter)
-
   const { html } = project
   const { tagSlugs } = project.fields
 
@@ -25,6 +23,7 @@ const Project = ({ project }) => {
       </div>
 
       <div className={styles['post__footer']}>
+        <Meta data={date} />
         <Tags tags={tags} tagSlugs={tagSlugs} />
         <Author />
       </div>
