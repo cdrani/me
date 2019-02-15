@@ -1,21 +1,27 @@
-'use strict';
+'use strict'
 
-const path = require('path');
-const siteConfig = require('../../config.js');
+const path = require('path')
+const siteConfig = require('../../config.js')
 
 module.exports = async (graphql, actions) => {
-  const { createPage } = actions;
+  const { createPage } = actions
 
   const result = await graphql(`
     {
       allMarkdownRemark(
-        filter: { frontmatter: { template: { eq: "post" }, draft: { ne: true } } }
-      ) { totalCount }
+        filter: {
+          frontmatter: { template: { eq: "post" }, draft: { ne: true } }
+        }
+      ) {
+        totalCount
+      }
     }
-  `);
+  `)
 
-  const { postsPerPage } = siteConfig;
-  const numPages = Math.ceil(result.data.allMarkdownRemark.totalCount / postsPerPage);
+  const { postsPerPage } = siteConfig
+  const numPages = Math.ceil(
+    result.data.allMarkdownRemark.totalCount / postsPerPage
+  )
 
   for (let i = 0; i < numPages; i += 1) {
     createPage({
@@ -30,6 +36,6 @@ module.exports = async (graphql, actions) => {
         hasPrevPage: i !== 0,
         hasNextPage: i !== numPages - 1
       }
-    });
+    })
   }
-};
+}
