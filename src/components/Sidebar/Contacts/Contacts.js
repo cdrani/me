@@ -1,12 +1,12 @@
-import React from 'react';
-import { getContactHref, getIcon } from '../../../utils';
-import Icon from '../../Icon';
-import styles from './Contacts.module.scss';
+import React from 'react'
+import { getContactHref, getIcon } from '../../../utils'
+import Icon from '../../Icon'
+import styles from './Contacts.module.scss'
 
 const Contacts = ({ contacts }) => (
   <div className={styles['contacts']}>
     <ul className={styles['contacts__list']}>
-      {Object.keys(contacts).map((name) => (
+      {Object.keys(contacts).map(name => (
         <li className={styles['contacts__list-item']} key={name}>
           <a
             className={styles['contacts__list-item-link']}
@@ -20,6 +20,6 @@ const Contacts = ({ contacts }) => (
       ))}
     </ul>
   </div>
-);
+)
 
-export default Contacts;
+export default Contacts

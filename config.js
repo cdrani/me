@@ -5,7 +5,7 @@ module.exports = {
   title: 'Charles Drani',
   subtitle:
     'Charles Drani personal site with articles, contact, and project pages',
-  copyright: '©charlesdrani All rights reserved.',
+  copyright: '© Charles Drani All rights reserved.',
   disqusShortname: '',
   postsPerPage: 5,
   projectsPerPage: 5,
@@ -32,11 +32,12 @@ module.exports = {
     name: 'Charles Drani',
     photo: '/photo.png',
     bio:
-      'I am a Full Stack Developer working with Ruby(Ruby on Rails), JS(React)',
+      'I am a Full Stack Developer working with Ruby(Ruby on Rails) and JS(React)',
     contacts: {
       email: 'charlesdrani@gmail.com',
       twitter: 'cdrainxv',
-      github: 'cdrainxv'
+      github: 'cdrainxv',
+      linkedin: 'charles-drani-6a11b7149/'
     }
   }
 }
