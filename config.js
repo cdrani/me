@@ -37,7 +37,7 @@ module.exports = {
       email: 'charlesdrani@gmail.com',
       twitter: 'cdrainxv',
       github: 'cdrainxv',
-      linkedin: 'charles-drani-6a11b7149/'
+      linkedin: 'charlesdrani'
     }
   }
 }
