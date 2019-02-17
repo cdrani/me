@@ -35,9 +35,9 @@ module.exports = {
       'I am a Full Stack Developer working with Ruby(Ruby on Rails) and JS(React)',
     contacts: {
       email: 'charlesdrani@gmail.com',
-      twitter: 'cdrainxv',
-      github: 'cdrainxv',
-      linkedin: 'charlesdrani'
+      twitter: 'c_drani',
+      github: 'cdrani',
+      linkedin: 'cdrani'
     }
   }
 }

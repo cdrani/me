@@ -18,7 +18,7 @@ const getContactHref = (name, contact) => {
       href = `mailto:${contact}`
       break
     case 'linkedin':
-      href = `https://linkedin.com/in/${contact}`
+      href = `https://linkedin.com/in/${contact}/`
       break
     default:
       href = contact
