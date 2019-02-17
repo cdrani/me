@@ -55,23 +55,24 @@ const createPages = async ({ graphql, actions }) => {
   const { edges } = result.data.allMarkdownRemark
 
   _.each(edges, edge => {
+    const { slug } = edge.node.fields
     if (_.get(edge, 'node.frontmatter.template') === 'page') {
       createPage({
-        path: edge.node.fields.slug,
+        path: slug,
         component: path.resolve('./src/templates/page-template.js'),
-        context: { slug: edge.node.fields.slug }
+        context: { slug }
       })
     } else if (_.get(edge, 'node.frontmatter.template') === 'post') {
       createPage({
-        path: edge.node.fields.slug,
+        path: slug,
         component: path.resolve('./src/templates/post-template.js'),
-        context: { slug: edge.node.fields.slug }
+        context: { slug }
       })
     } else if (_.get(edge, 'node.frontmatter.template') === 'project') {
       createPage({
-        path: edge.node.fields.slug,
+        path: slug,
         component: path.resolve('./src/templates/project-template.js'),
-        context: { slug: edge.node.fields.slug}
+        context: { slug }
       })
     }
   })

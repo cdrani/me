@@ -22,10 +22,6 @@ module.exports = {
     {
       label: 'About',
       path: '/about'
-    },
-    {
-      label: 'Contact',
-      path: '/contact'
     }
   ],
   author: {

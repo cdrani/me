@@ -2,7 +2,7 @@
 template: page
 title: Who I Am
 slug: about
-draft: true
+draft: false
 ---
 
 I am Charles Drani. 
