@@ -6,8 +6,8 @@ module.exports = {
   subtitle:
     'Charles Drani personal site with articles, contact, and project pages',
   copyright: '© Charles Drani All rights reserved.',
-  disqusShortname: '',
-  postsPerPage: 5,
+  disqusShortname: 'cdrani',
+  postsPerPage: 10,
   projectsPerPage: 5,
   googleAnalyticsId: 'UA-73379983-2',
   menu: [
