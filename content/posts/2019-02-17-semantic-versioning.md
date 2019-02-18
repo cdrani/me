@@ -67,7 +67,7 @@ Of course! Let's have a simple contrived example to explain the concepts above. 
 /**
   * @param {Number} num1 - operand
   * @param {Number} num2 - operand
-  * @returns {Object} {add: Number Number, subtract: Number}
+  * @returns {Object} {add: Number, subtract: Number}
   */
 
 module.exports = (num1, num2) => {
