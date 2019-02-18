@@ -109,8 +109,12 @@ Everything works according to plan! We release it on npm at 1.0.0, everyone love
 /**
   * @param {Number} num1 - operand
   * @param {Number} num2 - operand
-  * @returns {Object} {add: Number, divide: Number, multiply: Number,
-  * subtract: Number }
+  * @returns {Object} {
+                            add: Number, 
+                         divide: Number, 
+                       multiply: Number,
+                       subtract: Number 
+                      }
   */
 
 module.exports = (num1, num2) => {
