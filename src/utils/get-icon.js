@@ -22,6 +22,9 @@ const getIcon = name => {
     case 'linkedin':
       icon = ICONS.LINKEDIN
       break
+    case 'resume':
+      icon = ICONS.RESUME
+      break
     case 'rss':
       icon = ICONS.RSS
       break

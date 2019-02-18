@@ -43,6 +43,7 @@ export const Sidebar = props => (
                 github
                 email
                 linkedin
+                resume
               }
             }
           }

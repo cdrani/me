@@ -19,6 +19,8 @@ const getContactHref = (name, contact) => {
       break
     case 'linkedin':
       href = `https://linkedin.com/in/${contact}/`
+    case: 'resume':
+      href = `/static/${contact}.pdf`
       break
     default:
       href = contact

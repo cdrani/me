@@ -33,7 +33,8 @@ module.exports = {
       email: 'charlesdrani@gmail.com',
       twitter: 'c_drani',
       github: 'cdrani',
-      linkedin: 'cdrani'
+      linkedin: 'cdrani',
+      resume: 'cdrani'
     }
   }
 }
