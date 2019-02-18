@@ -12,6 +12,7 @@ category: Project
 tags:
   - xkcli
   - xkcd
+  - npm
 ---
 xkcd.com is a site created by Randall Munroe. The site contains comics with content stemming from a range of topics like maths, sciences, technology, to current events and everything in between.
 
