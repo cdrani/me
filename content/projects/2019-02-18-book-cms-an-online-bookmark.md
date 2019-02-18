@@ -2,7 +2,7 @@
 template: project
 title: 'Book CMS: An Online BookMark'
 slug: book-cms-an-online-bookmark
-draft: true
+draft: false
 date: 2019-02-18T14:49:13.965Z
 description: >-
   This is one of the more challenging projects I have ever attempted. At the
