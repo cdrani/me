@@ -4,6 +4,7 @@ title: 'xkcli: a comic viewer on your terminal'
 slug: xkcli-a-comic-viewer-on-your-terminal
 draft: false
 date: 2019-02-15T06:42:01.966Z
+hero: '../../static/media/xkcli.png'
 description: >-
   xkcd.com is a site created by Randall Munroe. The site contains comics with
   content stemming from a range of topics like maths, sciences, and technology,

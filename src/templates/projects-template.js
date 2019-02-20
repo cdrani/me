@@ -66,11 +66,14 @@ export const query = graphql`
             date
             category
             description
-            cover_image {
-              publicURL
+            hero {
               childImageSharp {
-                sizes(maxWidth: 960) {
+                fluid(maxWidth: 960) {
+                  aspectRatio
+                  src
                   srcSet
+                  sizes
+                  originalName
                 }
               }
             }
