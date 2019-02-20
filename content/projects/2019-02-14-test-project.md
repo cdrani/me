@@ -6,9 +6,11 @@ draft: false
 date: 2019-02-15T06:42:01.966Z
 hero: '../../static/media/xkcli.png'
 description: >-
-  xkcd.com is a site created by Randall Munroe. The site contains comics with
-  content stemming from a range of topics like maths, sciences, and technology,
-  to current events and everything in between.
+  A cli-based package that users can utilize to view comics from the
+  ever popular xkcd.com site. Various subcommands allow users to view current,
+  specific, and random comics. Additionally, users can "page through" comics
+  using next and previous subcommands. Last, but not least, users can modify the
+  color and style of the title and alt text of the comics.
 category: Project
 tags:
   - xkcli
