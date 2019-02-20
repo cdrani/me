@@ -14,7 +14,7 @@ const Project = ({ project }) => {
 
   return (
     <div className={styles['post']}>
-      <Link className={styles['post__home-button']} to="/projects">
+      <Link className={styles['post__home-button']} to="/">
         All Projects
       </Link>
 

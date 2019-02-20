@@ -25,7 +25,7 @@ module.exports = async (graphql, actions) => {
 
   for (let i = 0; i < numPages; i += 1) {
     createPage({
-      path: i === 0 ? '/projects' : `/page/${i}`,
+      path: i === 0 ? '/' : `/page/${i}`,
       component: path.resolve('./src/templates/projects-template.js'),
       context: {
         currentPage: i,
