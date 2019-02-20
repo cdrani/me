@@ -66,6 +66,14 @@ export const query = graphql`
             date
             category
             description
+            cover_image {
+              publicURL
+              childImageSharp {
+                sizes(maxWidth: 960) {
+                  srcSet
+                }
+              }
+            }
           }
         }
       }
