@@ -40,7 +40,9 @@ const Feed = ({ edges }) => (
         <p className={styles['feed__item-description']}>
           {edge.node.frontmatter.description}
         </p>
-      <Technologies technologies={edge.node.frontmatter.technologies} />
+        {edge.node.frontmatter.technologies && (
+          <Technologies technologies={edge.node.frontmatter.technologies} />
+        )}
         <Link
           className={styles['feed__item-readmore']}
           to={edge.node.fields.slug}
