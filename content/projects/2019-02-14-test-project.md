@@ -12,6 +12,11 @@ description: >-
   using next and previous subcommands. Last, but not least, users can modify the
   color and style of the title and alt text of the comics.
 category: Project
+technologies:
+  - node
+  - commander.js
+  - image-cat
+  - chalk
 tags:
   - xkcli
   - xkcd

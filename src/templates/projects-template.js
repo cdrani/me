@@ -66,6 +66,7 @@ export const query = graphql`
             date
             category
             description
+            technologies
             hero {
               childImageSharp {
                 fluid(maxWidth: 960) {

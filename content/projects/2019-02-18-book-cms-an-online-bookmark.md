@@ -12,6 +12,12 @@ description: >-
   such as reading from and writing to the database was managed by
   Apollo Client and GraphQL.
 category: Project
+technologies:
+  - react
+  - apollo client
+  - graphql
+  - react-router
+  - jwt
 tags:
   - react
   - apollo

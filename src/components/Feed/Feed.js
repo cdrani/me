@@ -2,6 +2,7 @@ import React from 'react'
 import moment from 'moment'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
+import Technologies from '../Project/Technologies.js'
 import styles from './Feed.module.scss'
 
 const Feed = ({ edges }) => (
@@ -39,6 +40,7 @@ const Feed = ({ edges }) => (
         <p className={styles['feed__item-description']}>
           {edge.node.frontmatter.description}
         </p>
+      <Technologies technologies={edge.node.frontmatter.technologies} />
         <Link
           className={styles['feed__item-readmore']}
           to={edge.node.fields.slug}
