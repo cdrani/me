@@ -28,7 +28,7 @@ module.exports = {
     name: 'Charles Drani',
     photo: '/photo.png',
     bio:
-      'I am a Full Stack Developer working with Ruby(Ruby on Rails) and JS(React)',
+      'I am a Full Stack Developer working with Ruby (Ruby on Rails) and JS (React)',
     contacts: {
       email: 'charlesdrani@gmail.com',
       twitter: 'c_drani',
