@@ -50,7 +50,7 @@ export const query = graphql`
       skip: $postsOffset
       filter: {
         fields: { collection: { eq: "posts" } }
-        frontmatter: { template: { eq: "post" } }
+        frontmatter: { template: { eq: "post" }, draft: { ne: true } }
       }
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {
