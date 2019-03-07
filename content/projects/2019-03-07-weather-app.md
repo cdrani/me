@@ -2,19 +2,20 @@
 template: project
 title: Weather App
 slug: weather-app
-draft: true
+draft: false
 date: 2019-03-07T18:10:53.101Z
 description: >-
   This is a weather application built using the
-  [openweathermap](https://openweathermap.org) api to fetch weather data from
+  openweathermap api to fetch weather data from
   cities around the world. On load, the weather data pertaining your current
-  location via your [geolocation ip](https://geoip-db.com/json/). Subsequent
+  location via a user's geolocation ip. Subsequent
   searches are added to a cities list, thus allowing for switching between
   cities.
-hero: /media/weather.png
+hero: /static/media/weather.png
 category: Project
 tags:
-  - openweathermap
+  - api
+  - weather
 technologies:
   - javascript
   - spectrecss
