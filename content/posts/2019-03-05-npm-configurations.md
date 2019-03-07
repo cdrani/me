@@ -41,17 +41,17 @@ Initially, maybe we wouldn't put too much forethought in how to fill it in, resu
 
 
 
-## DEM DEFAULTS THO
+## SETUP BASIC DEFAULTS
 
 The defaults generated are alright, but what if we want to personalize them? There is a way - through the `.npmrc` file. There are many configurations available and for many environments such as global, user, and per project (include a `.npmrc` file in your root project directory), to name a few. What we'll focus on is the user defaults for the **package.json**.
 
-## HOW TO FIND THE FILE
+### CONFIG FILE
 
 In your terminal: `npm config list -l | grep config`
 
 You should be outputted with this:
 
-```shell
+```bash
 ; cli configs
 ; userconfig /Users/cerulean/.npmrc
 ; builtin config undefined
@@ -87,7 +87,7 @@ EX:
 
 
 
-## IMPLEMENTATION #1
+### IMPLEMENTATION #1
 
 > npm config set init.version 0.1.0
 >
@@ -121,7 +121,7 @@ This is incrementally better. Note that we have setup the default version, autho
 
 
 
-## IMPLEMENTATION #2
+### IMPLEMENTATION #2
 
 Suppose we are a specific type of developer who specializes in creating specific types of projects using a specific framework which requires specific packages, being specifically lazy we don't want to start with the default json file generated for us, but we want to make it specifically unique to us with the ability still to adjust the defaults. How can we do that (and avoid using specific and all of its suffixes for the rest of this post)? By way of an **.npm-init.js** file in our root directory we can write up our entire **package.json** file manually and/or include some prompts with defaults values which we can overwrite if we so choose.
 
@@ -183,7 +183,7 @@ const pwd = () => {
 module.exports = {
   name: prompt('name', `${pwd()}`, name => `${name}`),
   version: prompt('version', '0.1.0', version => `${version}`),
-  main: prompt('main file', 'index.js', main => `${main}.js`),
+  main: prompt('main file', 'index.js', main => `${main}`),
   description: prompt('description', 'awesome project', desc => `${desc}`),
   scripts: {
     clean: 'rimraf dist',
@@ -205,7 +205,7 @@ module.exports = {
     type: prompt('source control', 'git', type => `${type}`),
     url: prompt('repo url', `${pwd()}`, repo => `${url}${repo}.git`)
   },
-  author: prompt('author', `cdrani`, author => `${author}`),
+  author: prompt('author', 'cdrani', author => `${author}`),
   license: prompt('MIT | ISC | BSD', 'MIT', license => `${license}`),
   bugs: prompt('bugs', `${pwd()}`, repo => `${url}${repo}/issues`),
   homepage: prompt('homepage url', `${url}${pwd()}`, link => `${link}`)
