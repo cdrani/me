@@ -5,7 +5,7 @@ slug: ttt
 draft: false
 date: 2019-03-08T22:46:59.670Z
 description: Tic Tac Toe application built with vanilla javascript and bulma.
-hero: /static/media/ttt.png
+hero: ../../static/media/ttt.png
 category: Project
 tags:
   - javascript
