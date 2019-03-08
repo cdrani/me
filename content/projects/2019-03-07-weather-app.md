@@ -11,7 +11,7 @@ description: >-
   location via a user's geolocation ip. Subsequent
   searches are added to a cities list, thus allowing for switching between
   cities.
-hero: /static/media/weather.png
+hero: ../../static/media/weather.png
 category: Project
 tags:
   - api
