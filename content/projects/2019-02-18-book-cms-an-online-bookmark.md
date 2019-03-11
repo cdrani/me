@@ -3,25 +3,24 @@ template: project
 title: 'Book CMS: An Online BookMark'
 slug: book-cms-an-online-bookmark
 draft: false
-date: 2019-02-18T14:49:13.965Z
-hero: '../../static/media/bookcms.png'
+date: 2019-03-10T13:49:13.965Z
 description: >-
-  A book content manager with crud functionality allowing a user to add,
-  delete, view, and update current location of their place in their books.
-  UI was built with react and styled-components, while everything else
-  such as reading from and writing to the database was managed by
-  Apollo Client and GraphQL.
+  A book content manager with crud functionality allowing a user to add, delete,
+  view, and update current location of their place in their books. UI was built
+  with react and styled-components, while everything else such as reading from
+  and writing to the database was managed by Apollo Client and GraphQL.
+hero: ../../static/media/bookcms.png
 category: Project
+tags:
+  - react
+  - apollo
+  - graphql
 technologies:
   - react
   - apollo client
   - graphql
   - react-router
   - jwt
-tags:
-  - react
-  - apollo
-  - graphql
 ---
 
 This was one of the more challenging projects I have ever attempted. At the onset, it seemed perfectly simple - use some react, redux to manage the state, throw in some express and mongodb for the backend, and voila!
