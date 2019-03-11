@@ -3,24 +3,24 @@ template: project
 title: 'xkcli: a comic viewer on your terminal'
 slug: xkcli-a-comic-viewer-on-your-terminal
 draft: false
-date: 2019-02-15T06:42:01.966Z
-hero: '../../static/media/xkcli.png'
+date: 2019-03-12T05:42:01.966Z
 description: >-
-  A cli-based package that users can utilize to view comics from the
-  ever popular xkcd.com site. Various subcommands allow users to view current,
+  A cli-based package that users can utilize to view comics from the ever
+  popular xkcd.com site. Various subcommands allow users to view current,
   specific, and random comics. Additionally, users can "page through" comics
   using next and previous subcommands. Last, but not least, users can modify the
   color and style of the title and alt text of the comics.
+hero: ../../static/media/xkcli.png
 category: Project
+tags:
+  - xkcli
+  - xkcd
+  - npm
 technologies:
   - node
   - commander.js
   - image-cat
   - chalk
-tags:
-  - xkcli
-  - xkcd
-  - npm
 ---
 xkcd.com is a site created by Randall Munroe. The site contains comics with content stemming from a range of topics like maths, sciences, technology, to current events and everything in between.
 
