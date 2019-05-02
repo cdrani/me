@@ -2,7 +2,7 @@ import React from 'react'
 import moment from 'moment'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
-import Technologies from '../Project/Technologies.js'
+import Technologies from '../Project/Technologies'
 import styles from './Feed.module.scss'
 
 const Feed = ({ edges }) => (

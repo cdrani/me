@@ -1,6 +1,6 @@
 {
     "parser": "babel-eslint",
-    "extends": "airbnb-base",
+    "extends": ["standard", "prettier"],
     "env": {
       "browser": true,
       "node": true,
@@ -25,10 +25,6 @@
         2,
         "as-needed"
       ],
-      "arrow-parens": [
-        "error",
-        "always"
-      ],
       "import/no-extraneous-dependencies": [
         "error",
         {
@@ -50,10 +46,6 @@
       "no-use-before-define": 0,
       "eol-last": 0,
       "no-shadow": 0,
-      "quotes": [
-        2,
-        "single"
-      ],
       "jsx-quotes": [
         0,
         "prefer-single"
