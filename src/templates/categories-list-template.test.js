@@ -1,6 +1,6 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-import CategoriesListTemplate from './categories-list-template';
+import React from 'react'
+import renderer from 'react-test-renderer'
+import CategoriesListTemplate from './categories-list-template'
 
 describe('CategoriesListTemplate', () => {
   const props = {
@@ -24,10 +24,10 @@ describe('CategoriesListTemplate', () => {
         }
       }
     }
-  };
+  }
 
   it('renders correctly', () => {
-    const tree = renderer.create(<CategoriesListTemplate {...props} />).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-});
+    const tree = renderer.create(<CategoriesListTemplate {...props} />).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+})

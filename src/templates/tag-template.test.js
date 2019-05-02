@@ -1,6 +1,6 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-import TagTemplate from './tag-template';
+import React from 'react'
+import renderer from 'react-test-renderer'
+import TagTemplate from './tag-template'
 
 describe('TagTemplate', () => {
   const props = {
@@ -62,10 +62,10 @@ describe('TagTemplate', () => {
       hasNextPage: true,
       hasPrevPage: true
     }
-  };
+  }
 
   it('renders correctly', () => {
-    const tree = renderer.create(<TagTemplate {...props} />).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-});
+    const tree = renderer.create(<TagTemplate {...props} />).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+})

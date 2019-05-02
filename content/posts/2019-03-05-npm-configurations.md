@@ -14,6 +14,7 @@ tags:
   - npm
   - config
 ---
+
 I love npm, you love npm, but does it love us? Yes! NPM has some great options that we can configure to be just for us. Let's take a look at some ways we can personalize the very first step in our interaction with npm - the initialization step!
 
 Most of our projects require the use of node and very often some packages from the NPM registry. A package.json file is mandatory for these projects filled with such metadata as name, version, author, etc. To initialize a node project we usually go through the following steps:
@@ -39,8 +40,6 @@ We would then end up with a package.json file like this:
 
 Initially, maybe we wouldn't put too much forethought in how to fill it in, resulting in us just pressing **ENTER** and having the defaults filled in for us. However, even that can become cumbersome, thus leading us to seek out a faster method: `npm init -y`. This approach is the same as above, but with the option of foregoing all the prompts and creating the json file with some preset values.
 
-
-
 ## SETUP BASIC DEFAULTS
 
 The defaults generated are alright, but what if we want to personalize them? There is a way - through the `.npmrc` file. There are many configurations available and for many environments such as global, user, and per project (include a `.npmrc` file in your root project directory), to name a few. What we'll focus on is the user defaults for the **package.json**.
@@ -59,9 +58,7 @@ globalconfig = "/usr/local/etc/npmrc"
 userconfig = "/Users/cerulean/.npmrc"
 ```
 
-Keying in on the `userconfig` line, we can see that the config file we want is a dot file on the root user directory. Furthermore, upon opening it (or just `cat .npmrc`) , the file is just  `key: value` pairs. There are some values pertaining to the **package.json** file we can change easily:
-
-
+Keying in on the `userconfig` line, we can see that the config file we want is a dot file on the root user directory. Furthermore, upon opening it (or just `cat .npmrc`) , the file is just `key: value` pairs. There are some values pertaining to the **package.json** file we can change easily:
 
 ```bash
 init.author.name
@@ -70,8 +67,6 @@ init.author.url
 init.author.license
 init.version
 ```
-
-
 
 Now we can use a text editor to edit the file by changing the key values or we can use the terminal:
 
@@ -84,8 +79,6 @@ EX:
 `npm config get init.author.url` will output **https://github.com/cdrani** as it's the default I set.
 
 `npm config set init.license MIT` will default your license field to **MIT** instead of the default **ISC**.
-
-
 
 ### IMPLEMENTATION #1
 
@@ -115,11 +108,7 @@ Resulting in this default **package.json** file when we `npm init -y`:
 }
 ```
 
-
-
 This is incrementally better. Note that we have setup the default version, author, and license fields to be particular to us, however we can do much better. Let's add defaults to things we almost certainly have to add and/or edit before we get any further in our projects.
-
-
 
 ### IMPLEMENTATION #2
 
@@ -143,32 +132,27 @@ which outputs this **package.json**:
 }
 ```
 
-
-
 Questions can also be customized using **prompts**:
 
 > module.exports = prompt("what's your favorite flavor of ice cream, buddy?", "I LIKE THEM ALL")
 
-
-
 We will use a combination of both methods. Essentially we want the following fields:
 
-+ name
-+ version
-+ main
-+ description
-+ scripts
-+ keywords
-+ dependencies
-+ devDependencies
-+ repository
-+ author
-+ license
-+ bugs
-+ homepage
+- name
+- version
+- main
+- description
+- scripts
+- keywords
+- dependencies
+- devDependencies
+- repository
+- author
+- license
+- bugs
+- homepage
 
-__NOTE__: Including the dependencies and devDependencies fields as your packages are most likely to be have been updated between each new project state, but is included here just for demonstration purposes. However, this can be remedied by using a package such as [npm-check-updates](https://www.npmjs.com/package/npm-check-updates).
-
+**NOTE**: Including the dependencies and devDependencies fields as your packages are most likely to be have been updated between each new project state, but is included here just for demonstration purposes. However, this can be remedied by using a package such as [npm-check-updates](https://www.npmjs.com/package/npm-check-updates).
 
 Here is a possible sample **.npm-init.js** file:
 
@@ -193,12 +177,12 @@ module.exports = {
   keywords: prompt('keywords', 'node, webpack, react', list => list.split(' ')),
   dependencies: {
     'prop-types': '^15.7.2',
-    'react': '^16.8.3',
+    react: '^16.8.3',
     'react-dom': '^16.8.3'
   },
   devDependencies: {
-    'rimraf': '^2.6.2',
-    'webpack': '^4.29.6',
+    rimraf: '^2.6.2',
+    webpack: '^4.29.6',
     'webpack-dev-server': '^3.2.1'
   },
   repository: {
@@ -210,18 +194,12 @@ module.exports = {
   bugs: prompt('bugs', `${pwd()}`, repo => `${url}${repo}/issues`),
   homepage: prompt('homepage url', `${url}${pwd()}`, link => `${link}`)
 }
-
 ```
 
 and here is the output file for a test project:
 
-
-
-
 Here is a live demo:
-
 
 For further configurations or to extend your npm init experience reference [promzard](https://github.com/npm/promzard), [init-package-json](https://github.com/npm/init-package-json), and/or [npm docs](https://docs.npmjs.com/).
 
-
-Here is this post's repo:  [npm-config-example](https://github.com/cdrani/npm-config-example).
+Here is this post's repo: [npm-config-example](https://github.com/cdrani/npm-config-example).

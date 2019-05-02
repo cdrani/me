@@ -1,6 +1,6 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-import TagsListTemplate from './tags-list-template';
+import React from 'react'
+import renderer from 'react-test-renderer'
+import TagsListTemplate from './tags-list-template'
 
 describe('TagsListTemplate', () => {
   const props = {
@@ -24,10 +24,10 @@ describe('TagsListTemplate', () => {
         }
       }
     }
-  };
+  }
 
   it('renders correctly', () => {
-    const tree = renderer.create(<TagsListTemplate {...props} />).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-});
+    const tree = renderer.create(<TagsListTemplate {...props} />).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+})

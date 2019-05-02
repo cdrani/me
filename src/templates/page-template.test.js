@@ -1,6 +1,6 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-import PageTemplate from './page-template';
+import React from 'react'
+import renderer from 'react-test-renderer'
+import PageTemplate from './page-template'
 
 describe('PageTemplate', () => {
   const props = {
@@ -19,10 +19,10 @@ describe('PageTemplate', () => {
         }
       }
     }
-  };
+  }
 
   it('renders correctly', () => {
-    const tree = renderer.create(<PageTemplate {...props} />).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-});
+    const tree = renderer.create(<PageTemplate {...props} />).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+})

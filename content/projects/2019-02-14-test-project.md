@@ -22,17 +22,19 @@ technologies:
   - image-cat
   - chalk
 ---
+
 xkcd.com is a site created by Randall Munroe. The site contains comics with content stemming from a range of topics like maths, sciences, technology, to current events and everything in between.
 
 I had been thinking about creating an npm package that would run like an executable. After I came upon the official xkcd api, I knew what I wanted to build.
 
-My solution is [xkcli](https://npmjs.com/package/xkcli) at npm. 
+My solution is [xkcli](https://npmjs.com/package/xkcli) at npm.
 This app allows users to retrieve current, random, and specific comics via subcommands. The comic is then displayed on the terminal with the title, image, and alternate text. Additionally users can navigate through the comics via a next and previous subcommands. A bonus feature is allowing users to change the color of the displayed title and alternate text via [chalk](https://github.com/chalk/chalk#styles) options.
 
 Takeaways:
+
 - reinforce understanding of async/await for fetching data
 - split separation of logic from one complex function into small
-concise functions (especially from v1 to v2)
+  concise functions (especially from v1 to v2)
 - write documentation on how to use packages
 
 Github Repo: [xkcl](https://github.com/cdrainxv/xkcli)

@@ -1,14 +1,11 @@
-import React from 'react';
-import { graphql } from 'gatsby';
-import Sidebar from '../components/Sidebar';
-import Layout from '../components/Layout';
-import Page from '../components/Page';
+import React from 'react'
+import { graphql } from 'gatsby'
+import Sidebar from '../components/Sidebar'
+import Layout from '../components/Layout'
+import Page from '../components/Page'
 
 const NotFoundTemplate = ({ data }) => {
-  const {
-    title,
-    subtitle
-  } = data.site.siteMetadata;
+  const { title, subtitle } = data.site.siteMetadata
 
   return (
     <Layout title={`Not Found - ${title}`} description={subtitle}>
@@ -17,8 +14,8 @@ const NotFoundTemplate = ({ data }) => {
         <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
       </Page>
     </Layout>
-  );
-};
+  )
+}
 
 export const query = graphql`
   query NotFoundQuery {
@@ -29,6 +26,6 @@ export const query = graphql`
       }
     }
   }
-`;
+`
 
-export default NotFoundTemplate;
+export default NotFoundTemplate

@@ -35,9 +35,7 @@ export const query = graphql`
         subtitle
       }
     }
-    allMarkdownRemark(
-      filter: { frontmatter: { draft: { ne: true } } }
-    ) {
+    allMarkdownRemark(filter: { frontmatter: { draft: { ne: true } } }) {
       group(field: frontmatter___category) {
         fieldValue
         totalCount

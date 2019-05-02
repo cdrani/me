@@ -1,6 +1,6 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-import IndexTemplate from './index-template';
+import React from 'react'
+import renderer from 'react-test-renderer'
+import IndexTemplate from './index-template'
 
 describe('IndexTemplate', () => {
   const props = {
@@ -51,10 +51,10 @@ describe('IndexTemplate', () => {
       hasNextPage: true,
       hasPrevPage: true
     }
-  };
+  }
 
   it('renders correctly', () => {
-    const tree = renderer.create(<IndexTemplate {...props} />).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-});
+    const tree = renderer.create(<IndexTemplate {...props} />).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+})
