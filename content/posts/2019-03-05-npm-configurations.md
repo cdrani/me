@@ -49,17 +49,17 @@ The defaults generated are alright, but what if we want to personalize them? The
 
 In your terminal: **`npm config list -l | grep config`**
 
-You should be outputted with this:
+Your stdout should be similar to the following:
 
 ```bash
 ; cli configs
-; userconfig /Users/cerulean/.npmrc
+; userconfig /Users/cdrani/.npmrc
 ; builtin config undefined
 globalconfig = "/usr/local/etc/npmrc"
-userconfig = "/Users/cerulean/.npmrc"
+userconfig = "/Users/cdrani/.npmrc"
 ```
 
-Keying in on the **`userconfig`** line, we can see that the config file we want is a dot file on the root user directory. Furthermore, upon opening it (or just **`cat .npmrc`**) , the file is just `key: value` pairs. There are some values pertaining to the **`package.json`** file we can change easily:
+Keying in on the **userconfig** line, we can see that the config file we want is a dot file on the root user directory. Furthermore, upon opening it (or just **`cat .npmrc`**) , the file is just `key = value` pairs. There are some values pertaining to the **`package.json`** file we can change easily:
 
 ```bash
 init.author.name
@@ -123,7 +123,7 @@ This is incrementally better. Note that we have setup the default version, autho
 
 Suppose we are a specific type of developer who specializes in creating specific types of projects using a specific framework which requires specific packages, being specifically lazy we don't want to start with the default json file generated for us, but we want to make it specifically unique to us with the ability still to adjust the defaults. How can we do that (and avoid using specific and all of its suffixes for the rest of this post)? By way of an **.npm-init.js** file in our root directory we can write up our entire **package.json** file manually and/or include some prompts with defaults values which we can overwrite if we so choose.
 
-This file might already be provided for us, but if not then we can create it in your root directory: `touch ~/.npm-init.js` and open it using your favorite text editor. As per per [npm](https://docs.npmjs.com/getting-started/using-a-package.json#customizing-the-init-process), you can customize your JS file using this approach:
+This file might already be provided for us, but if not then we can create it in your root directory: `touch ~/.npm-init.js` and open it using your favorite text editor. As per [npm](https://docs.npmjs.com/getting-started/using-a-package.json#customizing-the-init-process), you can customize your JS file using this approach:
 
 ```js
 module.exports = {
