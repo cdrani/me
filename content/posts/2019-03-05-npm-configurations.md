@@ -2,7 +2,7 @@
 template: post
 title: NPM Configurations
 slug: npm-configurations
-draft: true
+draft: false
 date: 2019-03-05T16:28:26.947Z
 description: >-
   I love npm, you love npm, but does it love us? Yes! NPM has some great options
@@ -169,22 +169,7 @@ module.exports = {
   version: prompt('version', '0.1.0', version => `${version}`),
   main: prompt('main file', 'index.js', main => `${main}`),
   description: prompt('description', 'awesome project', desc => `${desc}`),
-  scripts: {
-    clean: 'rimraf dist',
-    build: 'npm run clean && webpack',
-    serve: 'webpack-dev-server'
-  },
-  keywords: prompt('keywords', 'node, webpack, react', list => list.split(' ')),
-  dependencies: {
-    'prop-types': '^15.7.2',
-    react: '^16.8.3',
-    'react-dom': '^16.8.3'
-  },
-  devDependencies: {
-    rimraf: '^2.6.2',
-    webpack: '^4.29.6',
-    'webpack-dev-server': '^3.2.1'
-  },
+  keywords: prompt('keywords', 'node webpack react', list => list.split(' ')),
   repository: {
     type: prompt('source control', 'git', type => `${type}`),
     url: prompt('repo url', `${pwd()}`, repo => `${url}${repo}.git`)
@@ -196,9 +181,28 @@ module.exports = {
 }
 ```
 
-and here is the output file for a test project:
+and here is the output file for a **test** project:
 
-Here is a live demo:
+```json
+{
+  "name": "test",
+  "version": "0.1.0",
+  "main": "index.js",
+  "description": "test project",
+  "keywords": ["test project"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cdrani/test.git"
+  },
+  "author": "cdrani",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cdrani/test/issues"
+  },
+  "homepage": "https://github.com/cdrani/test"
+}
+```
+**NOTE**: Fields like **scripts**, **dependencies**, and **devDependencies** may also be included, but since they are more likely to change per project - especially package versions - it is recommended that they don't be automatically generated. However, we can mitigate getting the latest package versions by running `npx npm-check-updates -u; npm i`. This will update your packages versions `package.json` and `node_modules.
 
 For further configurations or to extend your npm init experience reference [promzard](https://github.com/npm/promzard), [init-package-json](https://github.com/npm/init-package-json), and/or [npm docs](https://docs.npmjs.com/).
 
