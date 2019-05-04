@@ -96,12 +96,13 @@ Everything works according to plan! We release it on npm at 1.0.0, everyone love
 /**
   * @param {Number} num1 - operand
   * @param {Number} num2 - operand
-  * @returns {Object} {
-                            add: Number, 
-                         divide: Number, 
-                       multiply: Number,
-                       subtract: Number 
-                      }
+  * @returns {Object} 
+     { 
+       add: Number, 
+       divide: Number, 
+       multiply: Number,
+       subtract: Number 
+     }
   */
 
 module.exports = (num1, num2) => {
@@ -150,11 +151,11 @@ Let's manually test this:
 
 ```bash
 > node
-> const add = require('./index').add
+> const { add } = require('./index')
 > add(12, 3)
 > 15
 ```
 
-Now, the important question - is this a breaking change? We can determine this by trying to make use of the functionality we had in the previous versions. Recall that previously we had one function which return an object. This iteration provides four functions that we can import, with each function return a Number type, thus making this not backwards-compatible. If a user updated to this new code, all their code using the previous version will fail. We push this new update with an incremented major version number to 2.0.0.
+Now, the important question - is this a breaking change? We can determine this by trying to make use of the functionality we had in the previous versions. Recall that previously we had one function which return an object. This iteration provides four functions that we can import, with each function returning a Number type, thus making this not backwards-compatible. If a user updated to this new code, all their code using the previous version will fail. We push this new update with an incremented major version number to 2.0.0.
 
 That's just about the gist of semantic versioning. For an indepth look into, please reference [semver](https://semver.org). For spelling, grammar, suggestions, and/or improvements, please file an issue at [cdrani/me](https://github.com/cdrani/me).
