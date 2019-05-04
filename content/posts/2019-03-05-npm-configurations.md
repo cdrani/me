@@ -21,6 +21,7 @@ Most of our projects require the use of node and very often some packages from t
 
 1. `npm init`
 2. Fill in the command prompts
+3. Add/modify fields
 
 We would then end up with a package.json file like this:
 
@@ -38,15 +39,15 @@ We would then end up with a package.json file like this:
 }
 ```
 
-Initially, maybe we wouldn't put too much forethought in how to fill it in, resulting in us just pressing **ENTER** and having the defaults filled in for us. However, even that can become cumbersome, thus leading us to seek out a faster method: `npm init -y`. This approach is the same as above, but with the option of foregoing all the prompts and creating the json file with some preset values.
+Initially, maybe we wouldn't put too much forethought in how to fill it in, resulting in us just pressing **ENTER** and having the defaults filled in for us. However, even that can become cumbersome, thus leading us to seek out a faster method: **`npm init -y`**. This approach is the same as above, but with the option of foregoing all the prompts and creating the json file with some preset values.
 
 ## SETUP BASIC DEFAULTS
 
-The defaults generated are alright, but what if we want to personalize them? There is a way - through the `.npmrc` file. There are many configurations available and for many environments such as global, user, and per project (include a `.npmrc` file in your root project directory), to name a few. What we'll focus on is the user defaults for the **package.json**.
+The defaults generated are alright, but what if we want to personalize them? There is a way - through the **`.npmrc`** file. There are many configurations available and for many environments such as global, user, and per project (include a **`.npmrc`** file in your root project directory), to name a few. What we'll focus on is the user defaults for the **`package.json`**.
 
 ### CONFIG FILE
 
-In your terminal: `npm config list -l | grep config`
+In your terminal: **`npm config list -l | grep config`**
 
 You should be outputted with this:
 
@@ -58,46 +59,54 @@ globalconfig = "/usr/local/etc/npmrc"
 userconfig = "/Users/cerulean/.npmrc"
 ```
 
-Keying in on the `userconfig` line, we can see that the config file we want is a dot file on the root user directory. Furthermore, upon opening it (or just `cat .npmrc`) , the file is just `key: value` pairs. There are some values pertaining to the **package.json** file we can change easily:
+Keying in on the `userconfig` line, we can see that the config file we want is a dot file on the root user directory. Furthermore, upon opening it (or just **`cat .npmrc`**) , the file is just `key: value` pairs. There are some values pertaining to the **`package.json`** file we can change easily:
 
 ```bash
 init.author.name
 init.author.email
 init.author.url
-init.author.license
+init.license
 init.version
 ```
 
 Now we can use a text editor to edit the file by changing the key values or we can use the terminal:
 
-`npm config get <key>` to retrieve the current value of key
-
-`npm config set <key> <value> [-g|--global]` to set the value for a key (with a global option)
+```bash
+> npm config get <key> to retrieve the current value of key
+> npm config set <key> <value> [-g|--global] to set the value for a key (with a global option)
+```
 
 EX:
 
-`npm config get init.author.url` will output **https://github.com/cdrani** as it's the default I set.
+```bash
+> npm config get init.author.url` 
+> https://github.com/cdrani
+```
 
-`npm config set init.license MIT` will default your license field to **MIT** instead of the default **ISC**.
+```bash
+> npm config get init.license 
+> ISC
+> npm config set init.license MIT
+> npm config get init.license 
+> MIT
+```
 
 ### IMPLEMENTATION #1
 
+```bash
 > npm config set init.version 0.1.0
->
 > npm config set init.author.name cdrani
->
 > npm config set init.author.email charlesdrani@gmail.com
->
 > npm config set init.author.url https://github.com/cdrani
->
-> npm config set init.author.url MIT
+> npm config set init.license MIT
+```
 
-Resulting in this default **package.json** file when we `npm init -y`:
+These commands will firstly update your `.npmrc` file with our new npm configs, and then those same configs will in turn be used as the defaults in our **package.json** file when we run **`npm init -y`**:
 
 ```json
 {
   "name": "example",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -142,17 +151,14 @@ We will use a combination of both methods. Essentially we want the following fie
 - version
 - main
 - description
-- scripts
 - keywords
-- dependencies
-- devDependencies
 - repository
 - author
 - license
 - bugs
 - homepage
 
-**NOTE**: Including the dependencies and devDependencies fields as your packages are most likely to be have been updated between each new project state, but is included here just for demonstration purposes. However, this can be remedied by using a package such as [npm-check-updates](https://www.npmjs.com/package/npm-check-updates).
+**NOTE**: The scripts, dependencies, and devDependencies fields are not included as your packages are most likely to be have been updated between each new project state and scripts are very project dependent. However, we can mitigate getting the latest package versions by running **`npx npm-check-updates -u; npm i`**. This will update your packages versions **`package.json`**, **`package-lock.json`** and **`node_modules`**.
 
 Here is a possible sample **.npm-init.js** file:
 
@@ -202,7 +208,8 @@ and here is the output file for a **test** project:
   "homepage": "https://github.com/cdrani/test"
 }
 ```
-**NOTE**: Fields like **scripts**, **dependencies**, and **devDependencies** may also be included, but since they are more likely to change per project - especially package versions - it is recommended that they don't be automatically generated. However, we can mitigate getting the latest package versions by running `npx npm-check-updates -u; npm i`. This will update your packages versions `package.json` and `node_modules.
+
+**NOTE**: Fields like **scripts**, **dependencies**, and **devDependencies** may also be included, but since they are more likely to change per project - especially package versions - it is recommended that they don't be automatically generated. However, we can mitigate getting the latest package versions by running `npx npm-check-updates -u; npm i`. This will update your packages versions `package.json` and `node_modules`.
 
 For further configurations or to extend your npm init experience reference [promzard](https://github.com/npm/promzard), [init-package-json](https://github.com/npm/init-package-json), and/or [npm docs](https://docs.npmjs.com/).
 
