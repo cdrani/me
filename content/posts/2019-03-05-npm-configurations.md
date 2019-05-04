@@ -19,7 +19,7 @@ I love npm, you love npm, but does it love us? Yes! NPM has some great options t
 
 Most of our projects require the use of node and very often some packages from the NPM registry. A package.json file is mandatory for these projects filled with such metadata as name, version, author, etc. To initialize a node project we usually go through the following steps:
 
-1. `npm init`
+1. **`npm init`**
 2. Fill in the command prompts
 3. Add/modify fields
 
@@ -59,7 +59,7 @@ globalconfig = "/usr/local/etc/npmrc"
 userconfig = "/Users/cerulean/.npmrc"
 ```
 
-Keying in on the `userconfig` line, we can see that the config file we want is a dot file on the root user directory. Furthermore, upon opening it (or just **`cat .npmrc`**) , the file is just `key: value` pairs. There are some values pertaining to the **`package.json`** file we can change easily:
+Keying in on the **`userconfig`** line, we can see that the config file we want is a dot file on the root user directory. Furthermore, upon opening it (or just **`cat .npmrc`**) , the file is just `key: value` pairs. There are some values pertaining to the **`package.json`** file we can change easily:
 
 ```bash
 init.author.name
@@ -79,7 +79,7 @@ Now we can use a text editor to edit the file by changing the key values or we c
 EX:
 
 ```bash
-> npm config get init.author.url` 
+> npm config get init.author.url 
 > https://github.com/cdrani
 ```
 
@@ -101,7 +101,7 @@ EX:
 > npm config set init.license MIT
 ```
 
-These commands will firstly update your `.npmrc` file with our new npm configs, and then those same configs will in turn be used as the defaults in our **package.json** file when we run **`npm init -y`**:
+These commands will firstly update your **`.npmrc`** file with our new npm configs, and then those same configs will in turn be used as the defaults in our **package.json** file when we run **`npm init -y`**:
 
 ```json
 {
@@ -125,14 +125,14 @@ Suppose we are a specific type of developer who specializes in creating specific
 
 This file might already be provided for us, but if not then we can create it in your root directory: `touch ~/.npm-init.js` and open it using your favorite text editor. As per per [npm](https://docs.npmjs.com/getting-started/using-a-package.json#customizing-the-init-process), you can customize your JS file using this approach:
 
-```javascript
+```js
 module.exports = {
   customField: 'Custom Field',
   otherCustomField: 'This field is really cool'
 }
 ```
 
-which outputs this **package.json**:
+which outputs this **`package.json`**:
 
 ```json
 {
@@ -158,7 +158,7 @@ We will use a combination of both methods. Essentially we want the following fie
 - bugs
 - homepage
 
-**NOTE**: The scripts, dependencies, and devDependencies fields are not included as your packages are most likely to be have been updated between each new project state and scripts are very project dependent. However, we can mitigate getting the latest package versions by running **`npx npm-check-updates -u; npm i`**. This will update your packages versions **`package.json`**, **`package-lock.json`** and **`node_modules`**.
+**NOTE**: The **scripts**, **dependencies**, and **devDependencies** fields are not included as your packages are most likely to be updated between each new project, and scripts tend to vary with different types of projects. However, we can mitigate getting the latest package versions by running **`npx npm-check-updates -u; npm i`** if we are so inclined to include those fields. This will update your packages versions **`package.json`**, **`package-lock.json`** and **`node_modules`**.
 
 Here is a possible sample **.npm-init.js** file:
 
@@ -208,8 +208,6 @@ and here is the output file for a **test** project:
   "homepage": "https://github.com/cdrani/test"
 }
 ```
-
-**NOTE**: Fields like **scripts**, **dependencies**, and **devDependencies** may also be included, but since they are more likely to change per project - especially package versions - it is recommended that they don't be automatically generated. However, we can mitigate getting the latest package versions by running `npx npm-check-updates -u; npm i`. This will update your packages versions `package.json` and `node_modules`.
 
 For further configurations or to extend your npm init experience reference [promzard](https://github.com/npm/promzard), [init-package-json](https://github.com/npm/init-package-json), and/or [npm docs](https://docs.npmjs.com/).
 
