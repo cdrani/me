@@ -13,6 +13,8 @@ description: >-
 category: tutorial
 tags:
   - node
+  - nvm
+  - 'n'
 ---
 # NODE VERSION MANAGEMENT
 
@@ -43,12 +45,12 @@ To update **`n`** (if there are any updates) just run **`n-update`**, and to uni
 ## COMMON COMMANDS
 
 | __**command**__ | __**description**__ |
-|:-------------------------|:----------------------------------------------|
-| **`n`**                  | list versions installed                       | 
-| **`n latest`**           | install/activate latest node release          |
-| **`n <version>`**        | install specific node version                 |
-| **`n prune`**            | delete all versions except the current version|
-| **`n rm <version ...>`** | remove specific node version(s)               |
+|:------|:--------|
+| **`n`** | list versions installed | 
+| **`n latest`** | install/activate latest node release |
+| **`n <version>`** | install specific node version |
+| **`n prune`** | delete all versions except the current version|
+| **`n rm <version ...>`** | remove specific node version(s) |      
 
 
 Reference the links above for in-depth installation steps and CLI commands for **n**. Happy versioning!
