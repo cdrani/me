@@ -16,9 +16,7 @@ tags:
   - nvm
   - 'n'
 ---
-# NODE VERSION MANAGEMENT
-
-The Node development pace is quite quick as you can see from their [changelogs](https://github.com/nodejs/node/blob/master/doc/changelogs/CHANGELOG_V12.md), therefore at any moment in time we might have different projects in development which we need to test on multiple versions of node, or the codebase could rely on a specific node version. These and other scenarios necessitate the need for having a version manager to switch between multiple node versions.
+The NodeJS development pace is quite quick as you can see from their [changelogs](https://github.com/nodejs/node/blob/master/doc/changelogs/CHANGELOG_V12.md), therefore at any moment in time we might have different projects in development which we need to test on multiple versions of node, or the codebase could rely on a specific node version. These and other scenarios necessitate the need for having a version manager to switch between multiple node versions.
 
 There are two node version managers I know, [nvm](https://github.com/creationix/nvm) and [n](https://github.com/tj/n). For quite a while I've been using **`nvm`** as it was the only one I knew and I liked it enough, but I transitioned to **`n`** early last year.
 
